@@ -1,6 +1,6 @@
 # MobileNetV3-TF
 Tensorflow implementation for two new MobileNetV3 models, these models can be use in classification、detection and segmentation task at so on.  
-For detail info please reference the paper "Searching for MobileNetV3".
+For detail info please reference the paper [Searching for MobileNetV3](https://arxiv.org/abs/1905.02244).
 
 ### Mobilenet V3 block
 ![MobileNetV3-block](misc/MobileNetV3-block.png)
