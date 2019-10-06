@@ -1,0 +1,272 @@
+<tf.Variable 'ConvBnAct_0/conv2d/kernel:0' shape=(3, 3, 3, 16) dtype=float32>
+<tf.Variable 'ConvBnAct_0/conv2d/bias:0' shape=(16,) dtype=float32>
+<tf.Variable 'ConvBnAct_0/BatchNormalization/gamma:0' shape=(16,) dtype=float32>
+<tf.Variable 'ConvBnAct_0/BatchNormalization/beta:0' shape=(16,) dtype=float32>
+<tf.Variable 'ConvBnAct_0/BatchNormalization/moving_mean:0' shape=(16,) dtype=float32>
+<tf.Variable 'ConvBnAct_0/BatchNormalization/moving_variance:0' shape=(16,) dtype=float32>
+<tf.Variable 'bneck_1/BottleNeckExpand/conv2d/kernel:0' shape=(1, 1, 16, 16) dtype=float32>
+<tf.Variable 'bneck_1/BottleNeckExpand/conv2d/bias:0' shape=(16,) dtype=float32>
+<tf.Variable 'bneck_1/BottleNeckExpand/BatchNormalization/gamma:0' shape=(16,) dtype=float32>
+<tf.Variable 'bneck_1/BottleNeckExpand/BatchNormalization/beta:0' shape=(16,) dtype=float32>
+<tf.Variable 'bneck_1/Depthwise3x3/depthwise_kernel:0' shape=(3, 3, 16, 1) dtype=float32>
+<tf.Variable 'bneck_1/Pointwise1x1/kernel:0' shape=(1, 1, 16, 16) dtype=float32>
+<tf.Variable 'bneck_1/BatchNormalization_1/gamma:0' shape=(16,) dtype=float32>
+<tf.Variable 'bneck_1/BatchNormalization_1/beta:0' shape=(16,) dtype=float32>
+<tf.Variable 'bneck_1/BatchNormalization_2/gamma:0' shape=(16,) dtype=float32>
+<tf.Variable 'bneck_1/BatchNormalization_2/beta:0' shape=(16,) dtype=float32>
+<tf.Variable 'bneck_1/BottleNeckExpand/BatchNormalization/moving_mean:0' shape=(16,) dtype=float32>
+<tf.Variable 'bneck_1/BottleNeckExpand/BatchNormalization/moving_variance:0' shape=(16,) dtype=float32>
+<tf.Variable 'bneck_1/BatchNormalization_1/moving_mean:0' shape=(16,) dtype=float32>
+<tf.Variable 'bneck_1/BatchNormalization_1/moving_variance:0' shape=(16,) dtype=float32>
+<tf.Variable 'bneck_1/BatchNormalization_2/moving_mean:0' shape=(16,) dtype=float32>
+<tf.Variable 'bneck_1/BatchNormalization_2/moving_variance:0' shape=(16,) dtype=float32>
+<tf.Variable 'bneck_2/BottleNeckExpand/conv2d/kernel:0' shape=(1, 1, 16, 64) dtype=float32>
+<tf.Variable 'bneck_2/BottleNeckExpand/conv2d/bias:0' shape=(64,) dtype=float32>
+<tf.Variable 'bneck_2/BottleNeckExpand/BatchNormalization/gamma:0' shape=(64,) dtype=float32>
+<tf.Variable 'bneck_2/BottleNeckExpand/BatchNormalization/beta:0' shape=(64,) dtype=float32>
+<tf.Variable 'bneck_2/Depthwise3x3/depthwise_kernel:0' shape=(3, 3, 64, 1) dtype=float32>
+<tf.Variable 'bneck_2/Pointwise1x1/kernel:0' shape=(1, 1, 64, 24) dtype=float32>
+<tf.Variable 'bneck_2/BatchNormalization_1/gamma:0' shape=(64,) dtype=float32>
+<tf.Variable 'bneck_2/BatchNormalization_1/beta:0' shape=(64,) dtype=float32>
+<tf.Variable 'bneck_2/BatchNormalization_2/gamma:0' shape=(24,) dtype=float32>
+<tf.Variable 'bneck_2/BatchNormalization_2/beta:0' shape=(24,) dtype=float32>
+<tf.Variable 'bneck_2/BottleNeckExpand/BatchNormalization/moving_mean:0' shape=(64,) dtype=float32>
+<tf.Variable 'bneck_2/BottleNeckExpand/BatchNormalization/moving_variance:0' shape=(64,) dtype=float32>
+<tf.Variable 'bneck_2/BatchNormalization_1/moving_mean:0' shape=(64,) dtype=float32>
+<tf.Variable 'bneck_2/BatchNormalization_1/moving_variance:0' shape=(64,) dtype=float32>
+<tf.Variable 'bneck_2/BatchNormalization_2/moving_mean:0' shape=(24,) dtype=float32>
+<tf.Variable 'bneck_2/BatchNormalization_2/moving_variance:0' shape=(24,) dtype=float32>
+<tf.Variable 'bneck_3/BottleNeckExpand/conv2d/kernel:0' shape=(1, 1, 24, 72) dtype=float32>
+<tf.Variable 'bneck_3/BottleNeckExpand/conv2d/bias:0' shape=(72,) dtype=float32>
+<tf.Variable 'bneck_3/BottleNeckExpand/BatchNormalization/gamma:0' shape=(72,) dtype=float32>
+<tf.Variable 'bneck_3/BottleNeckExpand/BatchNormalization/beta:0' shape=(72,) dtype=float32>
+<tf.Variable 'bneck_3/Depthwise3x3/depthwise_kernel:0' shape=(3, 3, 72, 1) dtype=float32>
+<tf.Variable 'bneck_3/Pointwise1x1/kernel:0' shape=(1, 1, 72, 24) dtype=float32>
+<tf.Variable 'bneck_3/BatchNormalization_1/gamma:0' shape=(72,) dtype=float32>
+<tf.Variable 'bneck_3/BatchNormalization_1/beta:0' shape=(72,) dtype=float32>
+<tf.Variable 'bneck_3/BatchNormalization_2/gamma:0' shape=(24,) dtype=float32>
+<tf.Variable 'bneck_3/BatchNormalization_2/beta:0' shape=(24,) dtype=float32>
+<tf.Variable 'bneck_3/BottleNeckExpand/BatchNormalization/moving_mean:0' shape=(72,) dtype=float32>
+<tf.Variable 'bneck_3/BottleNeckExpand/BatchNormalization/moving_variance:0' shape=(72,) dtype=float32>
+<tf.Variable 'bneck_3/BatchNormalization_1/moving_mean:0' shape=(72,) dtype=float32>
+<tf.Variable 'bneck_3/BatchNormalization_1/moving_variance:0' shape=(72,) dtype=float32>
+<tf.Variable 'bneck_3/BatchNormalization_2/moving_mean:0' shape=(24,) dtype=float32>
+<tf.Variable 'bneck_3/BatchNormalization_2/moving_variance:0' shape=(24,) dtype=float32>
+<tf.Variable 'bneck_4/BottleNeckExpand/conv2d/kernel:0' shape=(1, 1, 24, 72) dtype=float32>
+<tf.Variable 'bneck_4/BottleNeckExpand/conv2d/bias:0' shape=(72,) dtype=float32>
+<tf.Variable 'bneck_4/BottleNeckExpand/BatchNormalization/gamma:0' shape=(72,) dtype=float32>
+<tf.Variable 'bneck_4/BottleNeckExpand/BatchNormalization/beta:0' shape=(72,) dtype=float32>
+<tf.Variable 'bneck_4/Depthwise5x5/depthwise_kernel:0' shape=(5, 5, 72, 1) dtype=float32>
+<tf.Variable 'bneck_4/Pointwise1x1/kernel:0' shape=(1, 1, 72, 40) dtype=float32>
+<tf.Variable 'bneck_4/BatchNormalization_1/gamma:0' shape=(72,) dtype=float32>
+<tf.Variable 'bneck_4/BatchNormalization_1/beta:0' shape=(72,) dtype=float32>
+<tf.Variable 'bneck_4/BatchNormalization_2/gamma:0' shape=(40,) dtype=float32>
+<tf.Variable 'bneck_4/BatchNormalization_2/beta:0' shape=(40,) dtype=float32>
+<tf.Variable 'bneck_4/SEBottleneck/Squeeze/kernel:0' shape=(72, 18) dtype=float32>
+<tf.Variable 'bneck_4/SEBottleneck/Excite/kernel:0' shape=(18, 72) dtype=float32>
+<tf.Variable 'bneck_4/BottleNeckExpand/BatchNormalization/moving_mean:0' shape=(72,) dtype=float32>
+<tf.Variable 'bneck_4/BottleNeckExpand/BatchNormalization/moving_variance:0' shape=(72,) dtype=float32>
+<tf.Variable 'bneck_4/BatchNormalization_1/moving_mean:0' shape=(72,) dtype=float32>
+<tf.Variable 'bneck_4/BatchNormalization_1/moving_variance:0' shape=(72,) dtype=float32>
+<tf.Variable 'bneck_4/BatchNormalization_2/moving_mean:0' shape=(40,) dtype=float32>
+<tf.Variable 'bneck_4/BatchNormalization_2/moving_variance:0' shape=(40,) dtype=float32>
+<tf.Variable 'bneck_5/BottleNeckExpand/conv2d/kernel:0' shape=(1, 1, 40, 120) dtype=float32>
+<tf.Variable 'bneck_5/BottleNeckExpand/conv2d/bias:0' shape=(120,) dtype=float32>
+<tf.Variable 'bneck_5/BottleNeckExpand/BatchNormalization/gamma:0' shape=(120,) dtype=float32>
+<tf.Variable 'bneck_5/BottleNeckExpand/BatchNormalization/beta:0' shape=(120,) dtype=float32>
+<tf.Variable 'bneck_5/Depthwise5x5/depthwise_kernel:0' shape=(5, 5, 120, 1) dtype=float32>
+<tf.Variable 'bneck_5/Pointwise1x1/kernel:0' shape=(1, 1, 120, 40) dtype=float32>
+<tf.Variable 'bneck_5/BatchNormalization_1/gamma:0' shape=(120,) dtype=float32>
+<tf.Variable 'bneck_5/BatchNormalization_1/beta:0' shape=(120,) dtype=float32>
+<tf.Variable 'bneck_5/BatchNormalization_2/gamma:0' shape=(40,) dtype=float32>
+<tf.Variable 'bneck_5/BatchNormalization_2/beta:0' shape=(40,) dtype=float32>
+<tf.Variable 'bneck_5/SEBottleneck/Squeeze/kernel:0' shape=(120, 30) dtype=float32>
+<tf.Variable 'bneck_5/SEBottleneck/Excite/kernel:0' shape=(30, 120) dtype=float32>
+<tf.Variable 'bneck_5/BottleNeckExpand/BatchNormalization/moving_mean:0' shape=(120,) dtype=float32>
+<tf.Variable 'bneck_5/BottleNeckExpand/BatchNormalization/moving_variance:0' shape=(120,) dtype=float32>
+<tf.Variable 'bneck_5/BatchNormalization_1/moving_mean:0' shape=(120,) dtype=float32>
+<tf.Variable 'bneck_5/BatchNormalization_1/moving_variance:0' shape=(120,) dtype=float32>
+<tf.Variable 'bneck_5/BatchNormalization_2/moving_mean:0' shape=(40,) dtype=float32>
+<tf.Variable 'bneck_5/BatchNormalization_2/moving_variance:0' shape=(40,) dtype=float32>
+<tf.Variable 'bneck_6/BottleNeckExpand/conv2d/kernel:0' shape=(1, 1, 40, 120) dtype=float32>
+<tf.Variable 'bneck_6/BottleNeckExpand/conv2d/bias:0' shape=(120,) dtype=float32>
+<tf.Variable 'bneck_6/BottleNeckExpand/BatchNormalization/gamma:0' shape=(120,) dtype=float32>
+<tf.Variable 'bneck_6/BottleNeckExpand/BatchNormalization/beta:0' shape=(120,) dtype=float32>
+<tf.Variable 'bneck_6/Depthwise5x5/depthwise_kernel:0' shape=(5, 5, 120, 1) dtype=float32>
+<tf.Variable 'bneck_6/Pointwise1x1/kernel:0' shape=(1, 1, 120, 40) dtype=float32>
+<tf.Variable 'bneck_6/BatchNormalization_1/gamma:0' shape=(120,) dtype=float32>
+<tf.Variable 'bneck_6/BatchNormalization_1/beta:0' shape=(120,) dtype=float32>
+<tf.Variable 'bneck_6/BatchNormalization_2/gamma:0' shape=(40,) dtype=float32>
+<tf.Variable 'bneck_6/BatchNormalization_2/beta:0' shape=(40,) dtype=float32>
+<tf.Variable 'bneck_6/SEBottleneck/Squeeze/kernel:0' shape=(120, 30) dtype=float32>
+<tf.Variable 'bneck_6/SEBottleneck/Excite/kernel:0' shape=(30, 120) dtype=float32>
+<tf.Variable 'bneck_6/BottleNeckExpand/BatchNormalization/moving_mean:0' shape=(120,) dtype=float32>
+<tf.Variable 'bneck_6/BottleNeckExpand/BatchNormalization/moving_variance:0' shape=(120,) dtype=float32>
+<tf.Variable 'bneck_6/BatchNormalization_1/moving_mean:0' shape=(120,) dtype=float32>
+<tf.Variable 'bneck_6/BatchNormalization_1/moving_variance:0' shape=(120,) dtype=float32>
+<tf.Variable 'bneck_6/BatchNormalization_2/moving_mean:0' shape=(40,) dtype=float32>
+<tf.Variable 'bneck_6/BatchNormalization_2/moving_variance:0' shape=(40,) dtype=float32>
+<tf.Variable 'bneck_7/BottleNeckExpand/conv2d/kernel:0' shape=(1, 1, 40, 240) dtype=float32>
+<tf.Variable 'bneck_7/BottleNeckExpand/conv2d/bias:0' shape=(240,) dtype=float32>
+<tf.Variable 'bneck_7/BottleNeckExpand/BatchNormalization/gamma:0' shape=(240,) dtype=float32>
+<tf.Variable 'bneck_7/BottleNeckExpand/BatchNormalization/beta:0' shape=(240,) dtype=float32>
+<tf.Variable 'bneck_7/Depthwise3x3/depthwise_kernel:0' shape=(3, 3, 240, 1) dtype=float32>
+<tf.Variable 'bneck_7/Pointwise1x1/kernel:0' shape=(1, 1, 240, 80) dtype=float32>
+<tf.Variable 'bneck_7/BatchNormalization_1/gamma:0' shape=(240,) dtype=float32>
+<tf.Variable 'bneck_7/BatchNormalization_1/beta:0' shape=(240,) dtype=float32>
+<tf.Variable 'bneck_7/BatchNormalization_2/gamma:0' shape=(80,) dtype=float32>
+<tf.Variable 'bneck_7/BatchNormalization_2/beta:0' shape=(80,) dtype=float32>
+<tf.Variable 'bneck_7/BottleNeckExpand/BatchNormalization/moving_mean:0' shape=(240,) dtype=float32>
+<tf.Variable 'bneck_7/BottleNeckExpand/BatchNormalization/moving_variance:0' shape=(240,) dtype=float32>
+<tf.Variable 'bneck_7/BatchNormalization_1/moving_mean:0' shape=(240,) dtype=float32>
+<tf.Variable 'bneck_7/BatchNormalization_1/moving_variance:0' shape=(240,) dtype=float32>
+<tf.Variable 'bneck_7/BatchNormalization_2/moving_mean:0' shape=(80,) dtype=float32>
+<tf.Variable 'bneck_7/BatchNormalization_2/moving_variance:0' shape=(80,) dtype=float32>
+<tf.Variable 'bneck_8/BottleNeckExpand/conv2d/kernel:0' shape=(1, 1, 80, 200) dtype=float32>
+<tf.Variable 'bneck_8/BottleNeckExpand/conv2d/bias:0' shape=(200,) dtype=float32>
+<tf.Variable 'bneck_8/BottleNeckExpand/BatchNormalization/gamma:0' shape=(200,) dtype=float32>
+<tf.Variable 'bneck_8/BottleNeckExpand/BatchNormalization/beta:0' shape=(200,) dtype=float32>
+<tf.Variable 'bneck_8/Depthwise3x3/depthwise_kernel:0' shape=(3, 3, 200, 1) dtype=float32>
+<tf.Variable 'bneck_8/Pointwise1x1/kernel:0' shape=(1, 1, 200, 80) dtype=float32>
+<tf.Variable 'bneck_8/BatchNormalization_1/gamma:0' shape=(200,) dtype=float32>
+<tf.Variable 'bneck_8/BatchNormalization_1/beta:0' shape=(200,) dtype=float32>
+<tf.Variable 'bneck_8/BatchNormalization_2/gamma:0' shape=(80,) dtype=float32>
+<tf.Variable 'bneck_8/BatchNormalization_2/beta:0' shape=(80,) dtype=float32>
+<tf.Variable 'bneck_8/BottleNeckExpand/BatchNormalization/moving_mean:0' shape=(200,) dtype=float32>
+<tf.Variable 'bneck_8/BottleNeckExpand/BatchNormalization/moving_variance:0' shape=(200,) dtype=float32>
+<tf.Variable 'bneck_8/BatchNormalization_1/moving_mean:0' shape=(200,) dtype=float32>
+<tf.Variable 'bneck_8/BatchNormalization_1/moving_variance:0' shape=(200,) dtype=float32>
+<tf.Variable 'bneck_8/BatchNormalization_2/moving_mean:0' shape=(80,) dtype=float32>
+<tf.Variable 'bneck_8/BatchNormalization_2/moving_variance:0' shape=(80,) dtype=float32>
+<tf.Variable 'bneck_9/BottleNeckExpand/conv2d/kernel:0' shape=(1, 1, 80, 184) dtype=float32>
+<tf.Variable 'bneck_9/BottleNeckExpand/conv2d/bias:0' shape=(184,) dtype=float32>
+<tf.Variable 'bneck_9/BottleNeckExpand/BatchNormalization/gamma:0' shape=(184,) dtype=float32>
+<tf.Variable 'bneck_9/BottleNeckExpand/BatchNormalization/beta:0' shape=(184,) dtype=float32>
+<tf.Variable 'bneck_9/Depthwise3x3/depthwise_kernel:0' shape=(3, 3, 184, 1) dtype=float32>
+<tf.Variable 'bneck_9/Pointwise1x1/kernel:0' shape=(1, 1, 184, 80) dtype=float32>
+<tf.Variable 'bneck_9/BatchNormalization_1/gamma:0' shape=(184,) dtype=float32>
+<tf.Variable 'bneck_9/BatchNormalization_1/beta:0' shape=(184,) dtype=float32>
+<tf.Variable 'bneck_9/BatchNormalization_2/gamma:0' shape=(80,) dtype=float32>
+<tf.Variable 'bneck_9/BatchNormalization_2/beta:0' shape=(80,) dtype=float32>
+<tf.Variable 'bneck_9/BottleNeckExpand/BatchNormalization/moving_mean:0' shape=(184,) dtype=float32>
+<tf.Variable 'bneck_9/BottleNeckExpand/BatchNormalization/moving_variance:0' shape=(184,) dtype=float32>
+<tf.Variable 'bneck_9/BatchNormalization_1/moving_mean:0' shape=(184,) dtype=float32>
+<tf.Variable 'bneck_9/BatchNormalization_1/moving_variance:0' shape=(184,) dtype=float32>
+<tf.Variable 'bneck_9/BatchNormalization_2/moving_mean:0' shape=(80,) dtype=float32>
+<tf.Variable 'bneck_9/BatchNormalization_2/moving_variance:0' shape=(80,) dtype=float32>
+<tf.Variable 'bneck_10/BottleNeckExpand/conv2d/kernel:0' shape=(1, 1, 80, 184) dtype=float32>
+<tf.Variable 'bneck_10/BottleNeckExpand/conv2d/bias:0' shape=(184,) dtype=float32>
+<tf.Variable 'bneck_10/BottleNeckExpand/BatchNormalization/gamma:0' shape=(184,) dtype=float32>
+<tf.Variable 'bneck_10/BottleNeckExpand/BatchNormalization/beta:0' shape=(184,) dtype=float32>
+<tf.Variable 'bneck_10/Depthwise3x3/depthwise_kernel:0' shape=(3, 3, 184, 1) dtype=float32>
+<tf.Variable 'bneck_10/Pointwise1x1/kernel:0' shape=(1, 1, 184, 80) dtype=float32>
+<tf.Variable 'bneck_10/BatchNormalization_1/gamma:0' shape=(184,) dtype=float32>
+<tf.Variable 'bneck_10/BatchNormalization_1/beta:0' shape=(184,) dtype=float32>
+<tf.Variable 'bneck_10/BatchNormalization_2/gamma:0' shape=(80,) dtype=float32>
+<tf.Variable 'bneck_10/BatchNormalization_2/beta:0' shape=(80,) dtype=float32>
+<tf.Variable 'bneck_10/BottleNeckExpand/BatchNormalization/moving_mean:0' shape=(184,) dtype=float32>
+<tf.Variable 'bneck_10/BottleNeckExpand/BatchNormalization/moving_variance:0' shape=(184,) dtype=float32>
+<tf.Variable 'bneck_10/BatchNormalization_1/moving_mean:0' shape=(184,) dtype=float32>
+<tf.Variable 'bneck_10/BatchNormalization_1/moving_variance:0' shape=(184,) dtype=float32>
+<tf.Variable 'bneck_10/BatchNormalization_2/moving_mean:0' shape=(80,) dtype=float32>
+<tf.Variable 'bneck_10/BatchNormalization_2/moving_variance:0' shape=(80,) dtype=float32>
+<tf.Variable 'bneck_11/BottleNeckExpand/conv2d/kernel:0' shape=(1, 1, 80, 480) dtype=float32>
+<tf.Variable 'bneck_11/BottleNeckExpand/conv2d/bias:0' shape=(480,) dtype=float32>
+<tf.Variable 'bneck_11/BottleNeckExpand/BatchNormalization/gamma:0' shape=(480,) dtype=float32>
+<tf.Variable 'bneck_11/BottleNeckExpand/BatchNormalization/beta:0' shape=(480,) dtype=float32>
+<tf.Variable 'bneck_11/Depthwise3x3/depthwise_kernel:0' shape=(3, 3, 480, 1) dtype=float32>
+<tf.Variable 'bneck_11/Pointwise1x1/kernel:0' shape=(1, 1, 480, 112) dtype=float32>
+<tf.Variable 'bneck_11/BatchNormalization_1/gamma:0' shape=(480,) dtype=float32>
+<tf.Variable 'bneck_11/BatchNormalization_1/beta:0' shape=(480,) dtype=float32>
+<tf.Variable 'bneck_11/BatchNormalization_2/gamma:0' shape=(112,) dtype=float32>
+<tf.Variable 'bneck_11/BatchNormalization_2/beta:0' shape=(112,) dtype=float32>
+<tf.Variable 'bneck_11/SEBottleneck/Squeeze/kernel:0' shape=(480, 120) dtype=float32>
+<tf.Variable 'bneck_11/SEBottleneck/Excite/kernel:0' shape=(120, 480) dtype=float32>
+<tf.Variable 'bneck_11/BottleNeckExpand/BatchNormalization/moving_mean:0' shape=(480,) dtype=float32>
+<tf.Variable 'bneck_11/BottleNeckExpand/BatchNormalization/moving_variance:0' shape=(480,) dtype=float32>
+<tf.Variable 'bneck_11/BatchNormalization_1/moving_mean:0' shape=(480,) dtype=float32>
+<tf.Variable 'bneck_11/BatchNormalization_1/moving_variance:0' shape=(480,) dtype=float32>
+<tf.Variable 'bneck_11/BatchNormalization_2/moving_mean:0' shape=(112,) dtype=float32>
+<tf.Variable 'bneck_11/BatchNormalization_2/moving_variance:0' shape=(112,) dtype=float32>
+<tf.Variable 'bneck_12/BottleNeckExpand/conv2d/kernel:0' shape=(1, 1, 112, 672) dtype=float32>
+<tf.Variable 'bneck_12/BottleNeckExpand/conv2d/bias:0' shape=(672,) dtype=float32>
+<tf.Variable 'bneck_12/BottleNeckExpand/BatchNormalization/gamma:0' shape=(672,) dtype=float32>
+<tf.Variable 'bneck_12/BottleNeckExpand/BatchNormalization/beta:0' shape=(672,) dtype=float32>
+<tf.Variable 'bneck_12/Depthwise3x3/depthwise_kernel:0' shape=(3, 3, 672, 1) dtype=float32>
+<tf.Variable 'bneck_12/Pointwise1x1/kernel:0' shape=(1, 1, 672, 112) dtype=float32>
+<tf.Variable 'bneck_12/BatchNormalization_1/gamma:0' shape=(672,) dtype=float32>
+<tf.Variable 'bneck_12/BatchNormalization_1/beta:0' shape=(672,) dtype=float32>
+<tf.Variable 'bneck_12/BatchNormalization_2/gamma:0' shape=(112,) dtype=float32>
+<tf.Variable 'bneck_12/BatchNormalization_2/beta:0' shape=(112,) dtype=float32>
+<tf.Variable 'bneck_12/SEBottleneck/Squeeze/kernel:0' shape=(672, 168) dtype=float32>
+<tf.Variable 'bneck_12/SEBottleneck/Excite/kernel:0' shape=(168, 672) dtype=float32>
+<tf.Variable 'bneck_12/BottleNeckExpand/BatchNormalization/moving_mean:0' shape=(672,) dtype=float32>
+<tf.Variable 'bneck_12/BottleNeckExpand/BatchNormalization/moving_variance:0' shape=(672,) dtype=float32>
+<tf.Variable 'bneck_12/BatchNormalization_1/moving_mean:0' shape=(672,) dtype=float32>
+<tf.Variable 'bneck_12/BatchNormalization_1/moving_variance:0' shape=(672,) dtype=float32>
+<tf.Variable 'bneck_12/BatchNormalization_2/moving_mean:0' shape=(112,) dtype=float32>
+<tf.Variable 'bneck_12/BatchNormalization_2/moving_variance:0' shape=(112,) dtype=float32>
+<tf.Variable 'bneck_13/BottleNeckExpand/conv2d/kernel:0' shape=(1, 1, 112, 672) dtype=float32>
+<tf.Variable 'bneck_13/BottleNeckExpand/conv2d/bias:0' shape=(672,) dtype=float32>
+<tf.Variable 'bneck_13/BottleNeckExpand/BatchNormalization/gamma:0' shape=(672,) dtype=float32>
+<tf.Variable 'bneck_13/BottleNeckExpand/BatchNormalization/beta:0' shape=(672,) dtype=float32>
+<tf.Variable 'bneck_13/Depthwise5x5/depthwise_kernel:0' shape=(5, 5, 672, 1) dtype=float32>
+<tf.Variable 'bneck_13/Pointwise1x1/kernel:0' shape=(1, 1, 672, 160) dtype=float32>
+<tf.Variable 'bneck_13/BatchNormalization_1/gamma:0' shape=(672,) dtype=float32>
+<tf.Variable 'bneck_13/BatchNormalization_1/beta:0' shape=(672,) dtype=float32>
+<tf.Variable 'bneck_13/BatchNormalization_2/gamma:0' shape=(160,) dtype=float32>
+<tf.Variable 'bneck_13/BatchNormalization_2/beta:0' shape=(160,) dtype=float32>
+<tf.Variable 'bneck_13/SEBottleneck/Squeeze/kernel:0' shape=(672, 168) dtype=float32>
+<tf.Variable 'bneck_13/SEBottleneck/Excite/kernel:0' shape=(168, 672) dtype=float32>
+<tf.Variable 'bneck_13/BottleNeckExpand/BatchNormalization/moving_mean:0' shape=(672,) dtype=float32>
+<tf.Variable 'bneck_13/BottleNeckExpand/BatchNormalization/moving_variance:0' shape=(672,) dtype=float32>
+<tf.Variable 'bneck_13/BatchNormalization_1/moving_mean:0' shape=(672,) dtype=float32>
+<tf.Variable 'bneck_13/BatchNormalization_1/moving_variance:0' shape=(672,) dtype=float32>
+<tf.Variable 'bneck_13/BatchNormalization_2/moving_mean:0' shape=(160,) dtype=float32>
+<tf.Variable 'bneck_13/BatchNormalization_2/moving_variance:0' shape=(160,) dtype=float32>
+<tf.Variable 'bneck_14/BottleNeckExpand/conv2d/kernel:0' shape=(1, 1, 160, 960) dtype=float32>
+<tf.Variable 'bneck_14/BottleNeckExpand/conv2d/bias:0' shape=(960,) dtype=float32>
+<tf.Variable 'bneck_14/BottleNeckExpand/BatchNormalization/gamma:0' shape=(960,) dtype=float32>
+<tf.Variable 'bneck_14/BottleNeckExpand/BatchNormalization/beta:0' shape=(960,) dtype=float32>
+<tf.Variable 'bneck_14/Depthwise5x5/depthwise_kernel:0' shape=(5, 5, 960, 1) dtype=float32>
+<tf.Variable 'bneck_14/Pointwise1x1/kernel:0' shape=(1, 1, 960, 160) dtype=float32>
+<tf.Variable 'bneck_14/BatchNormalization_1/gamma:0' shape=(960,) dtype=float32>
+<tf.Variable 'bneck_14/BatchNormalization_1/beta:0' shape=(960,) dtype=float32>
+<tf.Variable 'bneck_14/BatchNormalization_2/gamma:0' shape=(160,) dtype=float32>
+<tf.Variable 'bneck_14/BatchNormalization_2/beta:0' shape=(160,) dtype=float32>
+<tf.Variable 'bneck_14/SEBottleneck/Squeeze/kernel:0' shape=(960, 240) dtype=float32>
+<tf.Variable 'bneck_14/SEBottleneck/Excite/kernel:0' shape=(240, 960) dtype=float32>
+<tf.Variable 'bneck_14/BottleNeckExpand/BatchNormalization/moving_mean:0' shape=(960,) dtype=float32>
+<tf.Variable 'bneck_14/BottleNeckExpand/BatchNormalization/moving_variance:0' shape=(960,) dtype=float32>
+<tf.Variable 'bneck_14/BatchNormalization_1/moving_mean:0' shape=(960,) dtype=float32>
+<tf.Variable 'bneck_14/BatchNormalization_1/moving_variance:0' shape=(960,) dtype=float32>
+<tf.Variable 'bneck_14/BatchNormalization_2/moving_mean:0' shape=(160,) dtype=float32>
+<tf.Variable 'bneck_14/BatchNormalization_2/moving_variance:0' shape=(160,) dtype=float32>
+<tf.Variable 'bneck_15/BottleNeckExpand/conv2d/kernel:0' shape=(1, 1, 160, 960) dtype=float32>
+<tf.Variable 'bneck_15/BottleNeckExpand/conv2d/bias:0' shape=(960,) dtype=float32>
+<tf.Variable 'bneck_15/BottleNeckExpand/BatchNormalization/gamma:0' shape=(960,) dtype=float32>
+<tf.Variable 'bneck_15/BottleNeckExpand/BatchNormalization/beta:0' shape=(960,) dtype=float32>
+<tf.Variable 'bneck_15/Depthwise5x5/depthwise_kernel:0' shape=(5, 5, 960, 1) dtype=float32>
+<tf.Variable 'bneck_15/Pointwise1x1/kernel:0' shape=(1, 1, 960, 160) dtype=float32>
+<tf.Variable 'bneck_15/BatchNormalization_1/gamma:0' shape=(960,) dtype=float32>
+<tf.Variable 'bneck_15/BatchNormalization_1/beta:0' shape=(960,) dtype=float32>
+<tf.Variable 'bneck_15/BatchNormalization_2/gamma:0' shape=(160,) dtype=float32>
+<tf.Variable 'bneck_15/BatchNormalization_2/beta:0' shape=(160,) dtype=float32>
+<tf.Variable 'bneck_15/SEBottleneck/Squeeze/kernel:0' shape=(960, 240) dtype=float32>
+<tf.Variable 'bneck_15/SEBottleneck/Excite/kernel:0' shape=(240, 960) dtype=float32>
+<tf.Variable 'bneck_15/BottleNeckExpand/BatchNormalization/moving_mean:0' shape=(960,) dtype=float32>
+<tf.Variable 'bneck_15/BottleNeckExpand/BatchNormalization/moving_variance:0' shape=(960,) dtype=float32>
+<tf.Variable 'bneck_15/BatchNormalization_1/moving_mean:0' shape=(960,) dtype=float32>
+<tf.Variable 'bneck_15/BatchNormalization_1/moving_variance:0' shape=(960,) dtype=float32>
+<tf.Variable 'bneck_15/BatchNormalization_2/moving_mean:0' shape=(160,) dtype=float32>
+<tf.Variable 'bneck_15/BatchNormalization_2/moving_variance:0' shape=(160,) dtype=float32>
+<tf.Variable 'ConvBnAct_16/conv2d/kernel:0' shape=(1, 1, 160, 960) dtype=float32>
+<tf.Variable 'ConvBnAct_16/conv2d/bias:0' shape=(960,) dtype=float32>
+<tf.Variable 'ConvBnAct_16/BatchNormalization/gamma:0' shape=(960,) dtype=float32>
+<tf.Variable 'ConvBnAct_16/BatchNormalization/beta:0' shape=(960,) dtype=float32>
+<tf.Variable 'ConvBnAct_16/BatchNormalization/moving_mean:0' shape=(960,) dtype=float32>
+<tf.Variable 'ConvBnAct_16/BatchNormalization/moving_variance:0' shape=(960,) dtype=float32>
+<tf.Variable 'ConvNBnAct_18/conv2d/kernel:0' shape=(1, 1, 960, 1280) dtype=float32>
+<tf.Variable 'ConvNBnAct_18/conv2d/bias:0' shape=(1280,) dtype=float32>
+<tf.Variable 'ConvNBnAct_19/conv2d/kernel:0' shape=(1, 1, 1280, 3) dtype=float32>
+<tf.Variable 'ConvNBnAct_19/conv2d/bias:0' shape=(3,) dtype=float32>
