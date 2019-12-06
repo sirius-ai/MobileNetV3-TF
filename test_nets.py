@@ -29,8 +29,7 @@ def get_parser():
 
     return args
 
-def batch_evaluation(logits, labels):
-    pred = tf.nn.softmax(logits)
+def batch_evaluation(pred, labels):
     correct_prediction = tf.cast(tf.equal(tf.argmax(pred, 1), tf.cast(labels, tf.int64)), tf.float32)
     return list(correct_prediction.numpy())
 
@@ -78,7 +77,8 @@ if __name__ == '__main__':
     count = 0
     for i, (images, labels) in enumerate(test_dataset):
         logits = model(images, training=args.train_phase)
-        batch_correct_prediction = batch_evaluation(logits, labels)
+        pred = tf.nn.softmax(logits)
+        batch_correct_prediction = batch_evaluation(pred, labels)
         total_predict.extend(batch_correct_prediction)
         count += len(labels)
         if count % 100 == 0:

@@ -46,14 +46,14 @@ def get_parser():
 def evaluation(log_dir, datasets, model):
     count = 0
     total_predict = []
-    def batch_evaluation(logits, labels):
-        pred = tf.nn.softmax(logits)
+    def batch_evaluation(pred, labels):
         correct_prediction = tf.cast(tf.equal(tf.argmax(pred, 1), tf.cast(labels, tf.int64)), tf.float32)
         return list(correct_prediction.numpy())
 
     for i, (images, labels) in enumerate(datasets):
         logits = model(images, training=False)
-        batch_correct_prediction = batch_evaluation(logits, labels)
+        pred = tf.nn.softmax(logits)
+        batch_correct_prediction = batch_evaluation(pred, labels)
         total_predict.extend(batch_correct_prediction)
         count += len(labels)
 
@@ -170,7 +170,8 @@ if __name__ == '__main__':
             with tf.GradientTape() as tape:
                 logits = model(images, training=args.train_phase)
                 # logits = tf.nn.l2_normalize(logits, 1, 1e-10, name='logits')
-                loss_value = loss_fn(labels, logits)
+                pred = tf.nn.softmax(logits)
+                loss_value = loss_fn(labels, pred)
 
             trainable_variables = model.trainable_variables
             grads = tape.gradient(loss_value, trainable_variables)
