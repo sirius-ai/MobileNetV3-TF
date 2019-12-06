@@ -169,9 +169,11 @@ if __name__ == '__main__':
         for i, (images, labels) in enumerate(train_dataset):
             with tf.GradientTape() as tape:
                 logits = model(images, training=args.train_phase)
+                regularization_loss = tf.math.add_n(model.losses)
                 # logits = tf.nn.l2_normalize(logits, 1, 1e-10, name='logits')
                 pred = tf.nn.softmax(logits)
-                loss_value = loss_fn(labels, pred)
+                pred_loss = loss_fn(labels, pred)
+                loss_value = pred_loss + regularization_loss
 
             trainable_variables = model.trainable_variables
             grads = tape.gradient(loss_value, trainable_variables)
