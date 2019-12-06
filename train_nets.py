@@ -28,12 +28,12 @@ def get_parser():
                         help='path to the training datasets of tfrecords file path')
     parser.add_argument('--test_tfrecords_file_path', default='./data/test.tfrecords', type=str,
                         help='path to the testing datasets of tfrecords file path')
-    parser.add_argument('--ckpt_path', default='./output/ckpt', help='the ckpt file save path')
-    parser.add_argument('--ckpt_best_path', default='./output/ckpt_best', help='the best ckpt file save path')
-    parser.add_argument('--log_file_path', default='./output/logs', help='the log file save path')
+    parser.add_argument('--ckpt_path', default='./ckpt', help='the ckpt file save path')
+    parser.add_argument('--ckpt_best_path', default='./ckpt_best', help='the best ckpt file save path')
+    parser.add_argument('--log_file_path', default='./logs', help='the log file save path')
     parser.add_argument('--buffer_size', default=10000, help='tf dataset api buffer size')
-    parser.add_argument('--ckpt_interval', default=1000, help='intervals to save ckpt file')
-    parser.add_argument('--validate_interval', default=1000, help='intervals to save ckpt file')
+    parser.add_argument('--ckpt_interval', default=500, help='intervals to save ckpt file')
+    parser.add_argument('--validate_interval', default=500, help='intervals to save ckpt file')
     parser.add_argument('--show_info_interval', default=50, help='intervals to save ckpt file')
     parser.add_argument('--pretrained_model', type=str, default='', help='Load a pretrained model before training starts.')
     parser.add_argument('--dropout_rate', type=float, help='dropout rate', default=0.2)
@@ -107,19 +107,19 @@ if __name__ == '__main__':
 
     # create log dir
     subdir = datetime.strftime(datetime.now(), '%Y%m%d-%H%M%S')
-    log_dir = os.path.join(os.path.expanduser(args.log_file_path), subdir)
+    log_dir = os.path.join("output", subdir, os.path.expanduser(args.log_file_path))
     if not os.path.isdir(log_dir):  # Create the log directory if it doesn't exist
         os.makedirs(log_dir)
-
-    if not os.path.exists(args.ckpt_path):
-        os.makedirs(args.ckpt_path)
+    output_dir = os.path.join("output", subdir, os.path.expanduser(args.ckpt_path))
+    if not os.path.exists(output_dir):
+        os.makedirs(output_dir)
 
     with open(os.path.join(log_dir, 'result.txt'), 'at') as f:
         f.write('%s\t%s\t%s\n' % ("step", "loss", "Accuracy"))
 
     # fix cudnn error, if you use gpu device
     for gpu in tf.config.experimental.list_physical_devices('GPU'):
-        tf.compat.v2.config.experimental.set_memory_growth(gpu, True)\
+        tf.compat.v2.config.experimental.set_memory_growth(gpu, True)
 
     # training datasets pipe
     train_tfrecords_f = os.path.join(args.train_tfrecords_file_path)
@@ -134,7 +134,7 @@ if __name__ == '__main__':
     test_dataset = test_dataset.batch(args.test_batch_size)
 
     # learning rate schedule
-    epoch_var = tf.Variable(1, trainable=False)
+    epoch_var = tf.Variable(0, trainable=False)
     learning_rate_fn = tf.keras.optimizers.schedules.PiecewiseConstantDecay(boundaries=args.lr_schedule,
                                                                             values=[0.005, 0.002, 0.001, 0.0005],
                                                                             name='lr_schedule')
@@ -192,14 +192,14 @@ if __name__ == '__main__':
             if step % args.ckpt_interval == 0:
                 # ckpt_path = os.path.join(args.ckpt_path, f'./checkpoints/MobileNetV3_{args.model_type}_{step}')
                 # model.save_weights(ckpt_path, save_format='tf')
-                ckpt_path = os.path.join(args.ckpt_path, f'MobileNetV3_{args.model_type}_{step}.h5')
+                ckpt_path = os.path.join(output_dir, f'MobileNetV3_{args.model_type}_{step}.h5')
                 model.save(ckpt_path)
 
             if step % args.validate_interval == 0:
                 evaluation(log_dir, test_dataset, model)
 
     # save finnal parameters
-    ckpt_path = os.path.join(args.ckpt_path, f'MobileNetV3_final.h5')
+    ckpt_path = os.path.join(output_dir, f'MobileNetV3_final.h5')
     model.save(ckpt_path)
     # final test
     evaluation(log_dir, test_dataset, model)
