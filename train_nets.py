@@ -43,9 +43,11 @@ def get_parser():
     return args
 
 
-def evaluation(log_dir, datasets, model):
+def evaluation(log_dir, datasets, model, summary_writer, loss_fn, lr, step):
     count = 0
+    loss_count = 0
     total_predict = []
+    total_loss = 0
     def batch_evaluation(pred, labels):
         correct_prediction = tf.cast(tf.equal(tf.argmax(pred, 1), tf.cast(labels, tf.int64)), tf.float32)
         return list(correct_prediction.numpy())
@@ -53,17 +55,24 @@ def evaluation(log_dir, datasets, model):
     for i, (images, labels) in enumerate(datasets):
         logits = model(images, training=False)
         pred = tf.nn.softmax(logits)
+        loss_value = loss_fn(labels, pred)
+        total_loss += loss_value
+        loss_count += 1
         batch_correct_prediction = batch_evaluation(pred, labels)
         total_predict.extend(batch_correct_prediction)
         count += len(labels)
 
     total_predict = np.asarray(total_predict)
     Accuracy = tf.reduce_mean(total_predict)
-    print(f'test total images {count}, Accuracy is {Accuracy}!')
+    mean_loss = total_loss / loss_count
+    print(f'test total images {count}, Accuracy is {Accuracy}, Mean loss is {mean_loss}, lr is {lr}!')
 
     with open(os.path.join(log_dir, 'result.txt'), 'at') as f:
-        f.write(f'test total images {count}, Accuracy is {Accuracy}!\n')
+        f.write(f'test total images {count}, Accuracy is {Accuracy}, Mean loss is {mean_loss}, lr is {lr}!\n')
 
+    with summary_writer.as_default():
+        tf.summary.scalar('train/eval_loss', mean_loss, step=step)
+        tf.summary.scalar('train/eval_accuracy', Accuracy, step=step)
 
 @tf.function
 def train_parse_function(example_proto):
@@ -105,6 +114,8 @@ if __name__ == '__main__':
     os.environ["CUDA_VISIBLE_DEVICES"] = "0"
     args = get_parser()
 
+    lr_schedule = [0.05, 0.01, 0.001, 0.0001]
+
     # create log dir
     subdir = datetime.strftime(datetime.now(), '%Y%m%d-%H%M%S')
     log_dir = os.path.join("output", subdir, os.path.expanduser(args.log_file_path))
@@ -116,10 +127,13 @@ if __name__ == '__main__':
 
     with open(os.path.join(log_dir, 'result.txt'), 'at') as f:
         f.write('%s\t%s\t%s\n' % ("step", "loss", "Accuracy"))
+        f.write(f'weight_decay:{args.weight_decay}, dropout_rate:{args.dropout_rate}, LR:{lr_schedule}')
 
     # fix cudnn error, if you use gpu device
     for gpu in tf.config.experimental.list_physical_devices('GPU'):
         tf.compat.v2.config.experimental.set_memory_growth(gpu, True)
+
+    summary_writer = tf.summary.create_file_writer(log_dir)  # create summary file writer
 
     # training datasets pipe
     train_tfrecords_f = os.path.join(args.train_tfrecords_file_path)
@@ -136,7 +150,7 @@ if __name__ == '__main__':
     # learning rate schedule
     epoch_var = tf.Variable(0, trainable=False)
     learning_rate_fn = tf.keras.optimizers.schedules.PiecewiseConstantDecay(boundaries=args.lr_schedule,
-                                                                            values=[0.005, 0.002, 0.001, 0.0005],
+                                                                            values=lr_schedule,
                                                                             name='lr_schedule')
     lr = learning_rate_fn(epoch_var)
 
@@ -187,7 +201,11 @@ if __name__ == '__main__':
                 Accuracy = tf.reduce_mean(correct_prediction)
                 print(f'epoch {e}, lr {lr}, total_step {step}, loss {loss_value}, Accuracy {Accuracy}')
                 with open(os.path.join(log_dir, 'result.txt'), 'at') as f:
-                    f.write('%d\t%2.4f\t%2.4f\n' % (step, loss_value, Accuracy))
+                    f.write('%d\t%2.4f\t%2.4f\t%2.4f\n' % (step, lr, loss_value, Accuracy))
+
+                with summary_writer.as_default():
+                    tf.summary.scalar('train/train_loss', loss_value, step=step)
+                    tf.summary.scalar('train/train_Accuracy', Accuracy, step=step)
 
             if step % args.ckpt_interval == 0:
                 # ckpt_path = os.path.join(args.ckpt_path, f'./checkpoints/MobileNetV3_{args.model_type}_{step}')
@@ -196,10 +214,10 @@ if __name__ == '__main__':
                 model.save(ckpt_path)
 
             if step % args.validate_interval == 0:
-                evaluation(log_dir, test_dataset, model)
+                evaluation(log_dir, test_dataset, model, summary_writer, loss_fn, lr, step)
 
     # save finnal parameters
     ckpt_path = os.path.join(output_dir, f'MobileNetV3_final.h5')
     model.save(ckpt_path)
     # final test
-    evaluation(log_dir, test_dataset, model)
+    evaluation(log_dir, test_dataset, model, summary_writer, loss_fn, lr, step)
